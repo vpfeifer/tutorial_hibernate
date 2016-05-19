@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="br.rc.unesp.tutorialhibernate.beans">
+    <class name="Curso" table="CURSO">
+        <id name="id" column="ID">
+            <generator class="native"/>
+        </id>
+        <property name="nome"/>
+    </class>
+</hibernate-mapping>

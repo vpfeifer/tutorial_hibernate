@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="br.rc.unesp.tutorialhibernate.beans">
+    <class name="Pessoa" table="PESSOA">
+        <id name="id" column="ID">
+            <generator class="native"/>
+        </id>
+        <property name="nome"/>
+        <property name="email"/>
+        <set name="enderecos" cascade="all">
+            <key column="id_pessoa"/>
+            <one-to-many class="Endereco"/>
+        </set>
+        <set name="cursosRealizados" cascade="save-update" table="PESSOA_CURSO">
+            <key column="ID_PESSOA"/>
+            <many-to-many column="ID_CURSO" class="Curso"/>
+        </set>
+    </class>
+</hibernate-mapping>
